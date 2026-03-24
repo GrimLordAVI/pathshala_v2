@@ -1,0 +1,21 @@
+{
+  "classes": {
+    "PCMB": [
+      { "id": 1, "name": "Avi Pawar", "roll": "PCMB01" },
+      { "id": 2, "name": "Riya Sharma", "roll": "PCMB02" },
+      { "id": 3, "name": "Karan Patel", "roll": "PCMB03" }
+    ],
+    "PCMC": [
+      { "id": 4, "name": "Neha Gupta", "roll": "PCMC01" },
+      { "id": 5, "name": "Arjun Mehta", "roll": "PCMC02" }
+    ],
+    "CEBA": [
+      { "id": 6, "name": "Sneha Reddy", "roll": "CEBA01" },
+      { "id": 7, "name": "Rahul Das", "roll": "CEBA02" }
+    ],
+    "SEBA": [
+      { "id": 8, "name": "Pooja Nair", "roll": "SEBA01" },
+      { "id": 9, "name": "Vikram Singh", "roll": "SEBA02" }
+    ]
+  }
+}
