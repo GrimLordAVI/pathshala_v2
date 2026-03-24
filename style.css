@@ -1,0 +1,245 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background: radial-gradient(circle at center, #111 0%, #000 100%);
+color:white;
+height:100vh;
+}
+
+.container{
+padding:40px;
+}
+
+/* Topbar */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+letter-spacing:2px;
+}
+
+.btn-outline{
+border:1px solid #777;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+}
+
+/* Hero */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+height:80vh;
+}
+
+.left h1{
+font-size:64px;
+margin-bottom:20px;
+}
+
+.left p{
+color:#aaa;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+}
+
+.btn-primary{
+background:#2e8b57;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+}
+
+.btn-secondary{
+background:#333;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+}
+
+/* Background text */
+.right{
+position:absolute;
+right:40px;
+top:50%;
+transform:translateY(-50%);
+pointer-events:none;
+}
+
+.bg-text{
+font-size:110px;
+font-weight:700;
+color:white;
+opacity:0.08;
+transform-origin:center;
+letter-spacing:5px;
+}
+
+.bg-text:nth-child(1){
+transform:rotate(-12deg) skewY(8deg);
+}
+
+.bg-text:nth-child(2){
+transform:rotate(-4deg) skewY(4deg);
+opacity:0.12;
+}
+
+.bg-text:nth-child(3){
+transform:rotate(6deg) skewY(-6deg);
+opacity:0.06;
+}
+/* Attendance Page */
+.attendance-box{
+margin-top:40px;
+background:rgba(255,255,255,0.03);
+padding:30px;
+border-radius:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th, td{
+padding:15px;
+border-bottom:1px solid #333;
+text-align:left;
+}
+
+.present{
+background:#2e8b57;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+.absent{
+background:#b22222;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 30px;
+    }
+    .hero {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+    .left h1 {
+        font-size: 56px;
+    }
+    .right {
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+    .bg-text {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .logo {
+        font-size: 24px;
+    }
+    .btn-outline {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .hero {
+        height: auto;
+        padding: 20px 0;
+    }
+    .left h1 {
+        font-size: 48px;
+    }
+    .left p {
+        font-size: 16px;
+    }
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-primary, .btn-secondary {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    .right {
+        display: none;
+    }
+    .attendance-box {
+        padding: 20px;
+        overflow-x: auto;
+    }
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 10px;
+    }
+    .present, .absent {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .left h1 {
+        font-size: 36px;
+    }
+    .left p {
+        font-size: 14px;
+    }
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .attendance-box {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    th, td {
+        padding: 8px;
+    }
+    .present, .absent {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}

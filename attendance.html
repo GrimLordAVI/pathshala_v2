@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+
+<div class="container mx-auto px-4 py-8 md:px-8">
+
+<div class="topbar flex flex-col md:flex-row justify-between items-center mb-8">
+<h2 class="logo text-2xl md:text-3xl font-bold mb-4 md:mb-0">PATHSHALA</h2>
+<a href="index.html" class="btn-outline border border-gray-600 px-4 py-2 rounded-lg hover:bg-gray-800 transition">BACK</a>
+</div>
+
+<div class="attendance-box bg-gray-900 bg-opacity-30 p-6 md:p-8 rounded-2xl">
+<h1 class="text-2xl md:text-3xl font-bold mb-6">Mark Attendance</h1>
+
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-gray-700 text-left">
+<th class="p-3 md:p-4">Name</th>
+<th class="p-3 md:p-4">Roll No</th>
+<th class="p-3 md:p-4">Status</th>
+</tr>
+</thead>
+
+<tbody id="studentTable">
+</tbody>
+
+</table>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const API_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+
+fetch(API_URL)
+.then(res => res.json())
+.then(data => {
+    
+    const table = document.getElementById("studentTable");
+
+    data.forEach(student => {
+
+        const row = `
+            <tr class="border-b border-gray-800">
+                <td class="p-3 md:p-4">${student.name}</td>
+                <td class="p-3 md:p-4">${student.roll}</td>
+                <td class="p-3 md:p-4 space-x-2">
+                    <button class="present bg-green-600 hover:bg-green-700 px-3 py-2 md:px-4 md:py-2 rounded-lg text-white text-sm md:text-base">Present</button>
+                    <button class="absent bg-red-600 hover:bg-red-700 px-3 py-2 md:px-4 md:py-2 rounded-lg text-white text-sm md:text-base">Absent</button>
+                </td>
+            </tr>
+        `;
+
+        table.innerHTML += row;
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
