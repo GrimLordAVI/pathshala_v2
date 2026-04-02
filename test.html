@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathshala Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      overflow: hidden; 
+    }
+
+   
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2; 
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(66, 15, 90, 0.6); 
+      z-index: -1; 
+    }
+
+    
+    .logo {
+      position: fixed;
+      top: 40px;
+      left: 50px;
+      font-size: 24px;
+      font-weight: 700;
+      z-index: 1;
+    }
+
+    .scroll-container {
+      position: relative;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      z-index: 10; 
+      transform: translateZ(0); 
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scroll-container::-webkit-scrollbar { display: none; }
+    .scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .slide {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      scroll-snap-align: start;
+      text-align: center;
+      padding: 0 5%;
+      font-size: 250px;
+    }
+
+   
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(40px, 10vw, 85px);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .tagline {
+      font-family: serif;
+      font-size: clamp(18px, 4vw, 34px);
+      margin-bottom: 35px;
+    }
+
+    .section-heading {
+      font-family: serif;
+      font-size: clamp(22px, 5vw, 40px);
+      font-weight: bold;
+      margin-bottom: 25px;
+      max-width: 900px;
+    }
+
+    .list-items {
+      list-style: none;
+      font-family: serif;
+      font-size: clamp(18px, 3.5vw, 28px);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    
+    .btn {
+      background: #8b4a97;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 35px;
+      font-size: 18px;
+      font-family: serif;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #71387a;
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Pathshala.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  
+  <div class="logo">Anuchaaya Inds.</div>
+
+  <div class="scroll-container">
+    
+    <section class="slide" id="slide1">
+      <h1 class="title">PATHSHALA</h1>
+      <p class="tagline">“A platform to manage and track easily”</p>
+      <button class="btn" onclick="scrollToId('slide2')">Learn more</button>
+    </section>
+
+    <section class="slide" id="slide2">
+      <h2 class="section-heading">We help institutes and coaching centers to</h2>
+      <ul class="list-items">
+        <li>→ Mark attendance</li>
+        <li>→ Track marks</li>
+        <li>→ Assignment portal</li>
+        <li>→ Student and Parental view</li>
+      </ul>
+
+    </section>
+
+    <section class="slide" id="slide3">
+      <h2 class="section-heading">Want it for your institute ?</h2>
+      <ul class="list-items">
+        <li>→ Fill the form</li>
+        <li>→ Mark a appointment (online)</li>
+        <li>→ make the payment</li>
+        <li>→ we will make it for you</li>
+      </ul>
+      <a href="https://forms.gle/ABQiCoEcgEiMjJuj8" target="_blank" class="btn">G - Form</a>
+    </section>
+
+  </div>
+
+  <script>
+    function scrollToId(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
